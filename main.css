@@ -1,0 +1,186 @@
+img {
+
+	width: 100% ; 
+    
+	height: auto;
+
+}
+
+
+html {    
+    background: url("newfraud3.png") no-repeat center fixed;     
+    background-size: cover;
+}
+
+body {
+
+    position: relative;
+
+}
+
+
+.center {  
+    position: absolute;
+    background: white;
+    width:500px;
+    height:500px ;
+    top: 500px;
+    left: 248px;
+    border-radius: 50%;
+    background-image: url("vitalis.png");
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+    background-size: auto 250px;
+  }
+
+
+.boule1{
+    width:500px;
+    height:500px;
+    position: absolute;
+    animation: rotation 2s infinite linear
+}
+
+.boule1::before{
+    content: '';
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: deeppink;
+    left: 20px;
+    top: 20px;
+    
+}
+
+.boule2{
+    width:500px;
+    height:500px;
+    position: absolute;
+    animation: rotation 2s infinite linear
+}
+
+.boule2::before{
+    content: '';
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: deepskyblue;
+    left: 370px;
+    top: 370px;
+    
+    
+}
+
+
+
+@keyframes rotation {
+    0% {
+        transform: rotate(-360deg);
+    }
+}
+
+.firstbox 
+{   
+    position: absolute;
+    border-radius: 60px;
+    left: 20px;
+    top: 1260px;
+    height: 345px;
+    width: 97%;
+    background-color: white;
+
+}
+
+.secondbox
+{   
+    position:absolute;
+    border-radius: 60px;
+    top: 370px;
+    height: 359px;
+    width: 100%;
+    background-color: white;
+
+}
+
+.c1 
+{
+    font-size: 60px;
+    margin-left: 30px;
+    padding-top: 30px;
+    font-weight: 600;
+      
+}
+
+
+
+.c2  
+{
+    
+    text-align: center;
+    font-size:40px;
+    padding-top: 30px;
+
+}
+
+.c3 {
+    
+    margin-left: 10%;
+    font-size: 70px;
+    font-weight: 600;
+    
+    
+
+}
+
+.c4{
+    
+    margin-left: 20%;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+
+.c5{
+    
+    margin-left:15%;
+    font-size: 60px;
+    font-weight: 400;
+
+}
+
+.c6{
+    
+    margin-left: 39%;
+    font-size: 60px;
+    font-weight: 400;
+    
+}
+
+#c23{
+    font-weight: 600;
+    font-size: 70px;
+    font-stretch: expanded;
+}
+#t1{
+    font-weight: 600;
+    font-size: 100%;
+}
+
+#t2{
+    font-weight: 600;
+    font-size: 60%;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    
+    
+  }
+
+
+
+
+
+

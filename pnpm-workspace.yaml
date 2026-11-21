@@ -1,4 +1,6 @@
 # pnpm 12 reads settings from here rather than package.json.
 # esbuild's postinstall links the platform-native binary that Vite needs.
-onlyBuiltDependencies:
-  - esbuild
+# `allowBuilds` is a name -> bool map; pnpm 12 replaced the older
+# `onlyBuiltDependencies` list, which it parses but silently never matches.
+allowBuilds:
+  esbuild: true

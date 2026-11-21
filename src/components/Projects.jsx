@@ -10,6 +10,13 @@ const GLOW = {
   pink: 'rgba(244,114,182,0.45)',
 }
 
+// Status pill borrows the card's own accent, like BAR and GLOW.
+const PILL = {
+  violet: 'border-accent/30 bg-accent/10 text-accent',
+  cyan: 'border-accent-2/30 bg-accent-2/10 text-accent-2',
+  pink: 'border-accent-3/30 bg-accent-3/10 text-accent-3',
+}
+
 const BAR = {
   violet: 'from-accent/80',
   cyan: 'from-accent-2/80',
@@ -22,7 +29,7 @@ export default function Projects() {
       <SectionHeading
         index="01"
         title="Selected work"
-        lead="A few things I've built end to end — the constraints mattered more than the stack."
+        lead="A few things I've built end to end."
       />
 
       <div className="grid gap-5 sm:grid-cols-2">
@@ -42,9 +49,24 @@ export default function Projects() {
                   <h3 className="font-display text-2xl font-semibold tracking-tight text-bright sm:text-[1.7rem]">
                     {p.title}
                   </h3>
-                  <span className="shrink-0 font-display text-xs tracking-[0.2em] text-muted">
-                    {p.year}
-                  </span>
+                  <div className="flex shrink-0 items-center gap-3">
+                    {p.status && (
+                      <span
+                        className={`flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide ${
+                          PILL[p.accent] ?? PILL.violet
+                        }`}
+                      >
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="absolute inset-0 animate-pulse-ring rounded-full bg-current" />
+                          <span className="relative h-1.5 w-1.5 rounded-full bg-current" />
+                        </span>
+                        {p.status}
+                      </span>
+                    )}
+                    <span className="font-display text-xs tracking-[0.2em] text-muted">
+                      {p.year}
+                    </span>
+                  </div>
                 </div>
 
                 <p className="text-[0.975rem] leading-relaxed text-muted">

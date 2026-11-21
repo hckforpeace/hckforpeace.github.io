@@ -9,14 +9,13 @@
 export const profile = {
   name: 'Pierre',
   fullName: 'Pierre Beylouni',
-  role: 'Software engineer — backend, product & AI agent infrastructure',
-  tagline:
-    'I build backend systems and agent runtimes that survive contact with reality.',
+  role: 'Software engineer — Agentic AI · Backend · Infrastructure · Product',
+  tagline: 'I build software products.',
   bio: `BSc in Computer Science from the University of Poitiers, then the core
   curriculum at École 42. Nearly two years of engineering experience — a Paris
-  startup and Airbus Defence and Space. I work mainly on backend services,
-  agentic AI, infrastructure and DevOps, and I'm looking for a full-time role
-  in those areas.`,
+  startup and Airbus Defence and Space. I build software products end to end,
+  with a bias towards agentic AI, solid services and the infrastructure that
+  carries them, and I'm looking for a full-time role doing exactly that.`,
   location: 'Paris, France',
   email: 'beylouni.pierre@gmail.com',
   available: true,
@@ -36,15 +35,16 @@ export const socials = [
 /*
  * `featured: true` makes a card span two columns.
  * `accent` picks the card's glow: 'violet' | 'cyan' | 'pink'
+ * `status` adds a pulsing pill next to the year, e.g. 'Ongoing' — omit it when done.
  */
 export const projects = [
   {
     title: 'Durable Agents',
     year: '2026',
     blurb:
-      'An LLM agent runtime where you author a harness — an ordered list of plain-English steps, each with its own tool allowlist and turn budget.',
+      'An agent runtime for long-running AI work you should not have to babysit: you describe the job as an ordered list of plain-English steps, and it carries them out end to end.',
     detail:
-      'Every step runs as a bounded agent loop inside a Temporal workflow, so killing a worker mid-flight and restarting it carries the run on without redoing finished work. Tools come from MCP servers; only a short carry-over summary crosses between steps, so a ten-step harness never accumulates ten steps of context. Pause and resume are Temporal signals rather than database flags.',
+      'Runs keep going across crashes, restarts and deploys without ever redoing finished work, and can be paused, inspected or resumed at any point. A web dashboard shows what every run is doing and how far it has got.',
     tags: ['Python', 'FastAPI', 'Temporal', 'PostgreSQL', 'MCP', 'React'],
     links: { repo: 'https://github.com/hckforpeace/Durable-Agents' },
     accent: 'violet',
@@ -54,9 +54,9 @@ export const projects = [
     title: 'Transcendence',
     year: '2025',
     blurb:
-      'A containerised real-time Pong platform with tournaments — the final project of the École 42 core curriculum, built by a team of four.',
+      'A real-time multiplayer Pong platform with accounts, matchmaking and tournaments — the final project of the École 42 core curriculum, built by a team of four.',
     detail:
-      'Node.js and Fastify backend, Google Sign-In and 2FA, a Q-learning AI opponent, a hardened ModSecurity WAF with HashiCorp Vault, Grafana and Prometheus monitoring, and Kubernetes deployment through Argo CD.',
+      'Players sign in, get matched and play in the browser, against each other or against an AI opponent that learned the game by playing it. Built to stand up as a real deployment — secured, monitored and self-healing — rather than a demo on a laptop.',
     tags: ['Node.js', 'Fastify', 'Docker', 'Kubernetes', 'Argo CD', 'Vault'],
     links: { repo: 'https://github.com/hckforpeace/Transcendance' },
     accent: 'cyan',
@@ -65,9 +65,10 @@ export const projects = [
     title: 'RAG against the machine',
     year: '2026',
     blurb:
-      'A retrieval-augmented generation pipeline built end to end over the vLLM source tree — 2,874 files, ~38 MB of Python and Markdown.',
+      'Ask a question about a codebase nobody has read in full and get an answer drawn from the source, with a pointer to exactly where it came from.',
     detail:
-      'Retrieved sources are character spans, not copies: a file path plus a range, scored with recall@k against a labelled set. Work in progress, built milestone by milestone.',
+      'Built over the vLLM project — 2,874 files of Python and Markdown, far more than fits in any single prompt. Answers are checked against a hand-labelled set rather than eyeballed, so improvements are measured rather than assumed.',
+    status: 'Ongoing',
     tags: ['Python', 'uv', 'Qwen3'],
     links: { repo: 'https://github.com/hckforpeace/RAG-against-the-machine' },
     accent: 'pink',
@@ -76,9 +77,9 @@ export const projects = [
     title: 'NixOS configuration',
     year: '2026',
     blurb:
-      'Flake-based, fully declarative NixOS config pinned to a single nixpkgs commit — no hand-edited files anywhere on the system.',
+      'My whole Linux environment as code: every machine I work on rebuilt from one repository, identically, with nothing configured by hand.',
     detail:
-      'Split into portable modules and per-machine hosts, so standing up a second machine means writing one new host directory and touching nothing shared.',
+      'A fresh machine goes from blank to ready in a single command, and any change that breaks something can be rolled back wholesale. Adding another machine means describing only what is different about it.',
     tags: ['Nix', 'Linux', 'i3'],
     links: { repo: 'https://github.com/hckforpeace/nixos-config' },
     accent: 'violet',
@@ -87,7 +88,7 @@ export const projects = [
     title: 'Self-hosted infrastructure',
     year: '2024 — now',
     blurb:
-      'A TrueNAS/ZFS server running local LLM inference with Ollama, plus Immich and Vaultwarden, all reachable only through a Tailscale VPN.',
+      'A home server that keeps my data mine — private photo library, password vault and AI models that run locally — on hardware I own and reachable only by me.',
     tags: ['TrueNAS', 'ZFS', 'Docker', 'Tailscale', 'Ollama'],
     links: { repo: 'https://github.com/hckforpeace/truenas_project' },
     accent: 'cyan',

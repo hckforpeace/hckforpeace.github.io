@@ -1,6 +1,7 @@
+import { GraduationCap } from 'lucide-react'
 import SectionHeading from './SectionHeading.jsx'
 import Reveal from './Reveal.jsx'
-import { profile } from '../data.js'
+import { education, profile } from '../data.js'
 
 export default function About() {
   return (
@@ -13,16 +14,15 @@ export default function About() {
 
       <SectionHeading index="02" title="About" />
 
-      <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <Reveal>
-          <p className="text-xl leading-relaxed text-bright/90 sm:text-[1.4rem] sm:leading-[1.6]">
+          <p className="text-xl leading-relaxed text-bright/90 sm:text-[1.35rem] sm:leading-[1.6]">
             {profile.bio}
           </p>
 
-          <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-7 sm:grid-cols-3">
+          <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-7">
             {[
               { k: 'Based in', v: profile.location },
-              { k: 'Focus', v: profile.role },
               { k: 'Status', v: profile.availableLabel },
             ].map((row) => (
               <div key={row.k}>
@@ -36,15 +36,29 @@ export default function About() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <div className="relative aspect-4/5 overflow-hidden rounded-3xl card-edge">
-            {/* TODO: drop a photo at public/portrait.jpg and swap this block
-                for <img src="/portrait.jpg" alt="" className="h-full w-full object-cover" /> */}
-            <div className="absolute inset-0 bg-[radial-gradient(130%_100%_at_30%_0%,rgba(167,139,250,.35),transparent_55%),radial-gradient(100%_100%_at_90%_100%,rgba(34,211,238,.25),transparent_55%)]" />
-            <div className="absolute inset-0 flex items-end p-7">
-              <p className="font-display text-sm tracking-[0.2em] text-muted uppercase">
-                Portrait goes here
-              </p>
-            </div>
+          <div className="rounded-3xl card-edge p-7 sm:p-8">
+            <h3 className="flex items-center gap-2.5 font-display text-xs uppercase tracking-[0.2em] text-accent">
+              <GraduationCap size={15} />
+              Education
+            </h3>
+
+            <ul className="mt-7 flex flex-col gap-7">
+              {education.map((e) => (
+                <li key={e.school}>
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <p className="font-display text-base font-semibold text-bright">
+                      {e.school}
+                    </p>
+                    <span className="font-display text-xs tracking-[0.18em] text-muted">
+                      {e.period}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-[0.925rem] leading-relaxed text-muted">
+                    {e.detail}
+                  </p>
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
       </div>

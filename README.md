@@ -1,5 +1,7 @@
 # hckforpeace.github.io
 
+Pierre Beylouni — personal portfolio.
+
 Personal portfolio — a single-page React SPA, built with Vite and deployed to
 GitHub Pages by Actions.
 

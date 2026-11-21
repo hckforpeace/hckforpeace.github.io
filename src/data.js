@@ -1,133 +1,180 @@
 /*
  * ────────────────────────────────────────────────────────────────
  *  ALL SITE CONTENT LIVES HERE. Edit this file, nothing else.
- *  Everything marked TODO is placeholder — swap in real details.
+ *  Sourced from Pierre_Beylouni_CV.tex and the public repos.
+ *  Deliberately omitted: phone number, postal address.
  * ────────────────────────────────────────────────────────────────
  */
 
 export const profile = {
-  name: 'Damien',
-  // TODO: your actual title
-  role: 'Software Engineer',
-  // Shown as the big hero statement. Keep it to ~12 words.
-  tagline: 'I build things for the web that are fast, sharp and hard to break.',
-  // One short paragraph, first person.
-  bio: `TODO: two or three sentences about what you do, what you care about,
-  and what kind of problems you like being handed. Say what you are good at
-  without padding — the projects below do the proving.`,
-  location: 'France',
-  email: 'damien@prestancelab.com',
+  name: 'Pierre',
+  fullName: 'Pierre Beylouni',
+  role: 'Software engineer — backend, product & AI agent infrastructure',
+  tagline:
+    'I build backend systems and agent runtimes that survive contact with reality.',
+  bio: `BSc in Computer Science from the University of Poitiers, then the core
+  curriculum at École 42. Nearly two years of engineering experience — a Paris
+  startup and Airbus Defence and Space. I work mainly on backend services,
+  agentic AI, infrastructure and DevOps, and I'm looking for a full-time role
+  in those areas.`,
+  location: 'Paris, France',
+  email: 'beylouni.pierre@gmail.com',
   available: true,
-  availableLabel: 'Open to new projects',
+  availableLabel: 'Open to full-time software engineering roles',
 }
 
 export const socials = [
   { label: 'GitHub', href: 'https://github.com/hckforpeace', icon: 'github' },
-  // TODO: replace with your real profile URLs, or delete the lines you don't want.
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/', icon: 'linkedin' },
-  { label: 'Email', href: 'mailto:damien@prestancelab.com', icon: 'mail' },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/pierre-beylouni-79051418a',
+    icon: 'linkedin',
+  },
+  { label: 'Email', href: 'mailto:beylouni.pierre@gmail.com', icon: 'mail' },
 ]
 
 /*
- * Projects. `featured: true` makes the card span two columns.
+ * `featured: true` makes a card span two columns.
  * `accent` picks the card's glow: 'violet' | 'cyan' | 'pink'
  */
 export const projects = [
   {
-    title: 'TODO — Flagship project',
+    title: 'Durable Agents',
     year: '2026',
     blurb:
-      'What it does in one sentence, then why it was hard. Lead with the outcome, not the tech.',
+      'An LLM agent runtime where you author a harness — an ordered list of plain-English steps, each with its own tool allowlist and turn budget.',
     detail:
-      'A second line for the thing you are actually proud of — the constraint you worked around, the scale it handles, the metric it moved.',
-    tags: ['React', 'TypeScript', 'Postgres'],
-    links: { live: '#', repo: 'https://github.com/hckforpeace' },
+      'Every step runs as a bounded agent loop inside a Temporal workflow, so killing a worker mid-flight and restarting it carries the run on without redoing finished work. Tools come from MCP servers; only a short carry-over summary crosses between steps, so a ten-step harness never accumulates ten steps of context. Pause and resume are Temporal signals rather than database flags.',
+    tags: ['Python', 'FastAPI', 'Temporal', 'PostgreSQL', 'MCP', 'React'],
+    links: { repo: 'https://github.com/hckforpeace/Durable-Agents' },
     accent: 'violet',
     featured: true,
   },
   {
-    title: 'TODO — Second project',
+    title: 'Transcendence',
     year: '2025',
-    blurb: 'One sentence on what it is and who it is for.',
-    tags: ['Python', 'FastAPI'],
-    links: { repo: 'https://github.com/hckforpeace' },
+    blurb:
+      'A containerised real-time Pong platform with tournaments — the final project of the École 42 core curriculum, built by a team of four.',
+    detail:
+      'Node.js and Fastify backend, Google Sign-In and 2FA, a Q-learning AI opponent, a hardened ModSecurity WAF with HashiCorp Vault, Grafana and Prometheus monitoring, and Kubernetes deployment through Argo CD.',
+    tags: ['Node.js', 'Fastify', 'Docker', 'Kubernetes', 'Argo CD', 'Vault'],
+    links: { repo: 'https://github.com/hckforpeace/Transcendance' },
     accent: 'cyan',
   },
   {
-    title: 'TODO — Third project',
-    year: '2025',
-    blurb: 'One sentence. Specific beats impressive.',
-    tags: ['Nix', 'CI/CD'],
-    links: { repo: 'https://github.com/hckforpeace' },
+    title: 'RAG against the machine',
+    year: '2026',
+    blurb:
+      'A retrieval-augmented generation pipeline built end to end over the vLLM source tree — 2,874 files, ~38 MB of Python and Markdown.',
+    detail:
+      'Retrieved sources are character spans, not copies: a file path plus a range, scored with recall@k against a labelled set. Work in progress, built milestone by milestone.',
+    tags: ['Python', 'uv', 'Qwen3'],
+    links: { repo: 'https://github.com/hckforpeace/RAG-against-the-machine' },
     accent: 'pink',
   },
   {
-    title: 'TODO — Fourth project',
-    year: '2024',
-    blurb: 'Side projects count — say what you learned building it.',
-    tags: ['WebGL', 'Canvas'],
-    links: { live: '#' },
+    title: 'NixOS configuration',
+    year: '2026',
+    blurb:
+      'Flake-based, fully declarative NixOS config pinned to a single nixpkgs commit — no hand-edited files anywhere on the system.',
+    detail:
+      'Split into portable modules and per-machine hosts, so standing up a second machine means writing one new host directory and touching nothing shared.',
+    tags: ['Nix', 'Linux', 'i3'],
+    links: { repo: 'https://github.com/hckforpeace/nixos-config' },
     accent: 'violet',
+  },
+  {
+    title: 'Self-hosted infrastructure',
+    year: '2024 — now',
+    blurb:
+      'A TrueNAS/ZFS server running local LLM inference with Ollama, plus Immich and Vaultwarden, all reachable only through a Tailscale VPN.',
+    tags: ['TrueNAS', 'ZFS', 'Docker', 'Tailscale', 'Ollama'],
+    links: { repo: 'https://github.com/hckforpeace/truenas_project' },
+    accent: 'cyan',
   },
 ]
 
 /*
- * Experience, newest first. `current: true` gets the pulsing marker.
+ * Newest first. `current: true` gets the pulsing marker.
  */
 export const experience = [
   {
-    company: 'TODO — Current employer',
-    role: 'TODO — Your role',
-    period: '2024 — Present',
-    current: true,
+    company: 'Tamtam · Paris',
+    role: 'Product Engineer (internship)',
+    period: 'Jan — Jul 2026',
     points: [
-      'What you own, in one line.',
-      'A result with a number in it, if you have one.',
+      'Built the tools behind the product’s backend agent, so customer success teams could assemble LLM workflows that call custom tools and run actions on a customer’s behalf instead of repeating them by hand.',
+      'Shipped an MCP server exposing a customer’s CRM to the in-app AI assistant, so users ask the LLM in plain language about records they keep in HubSpot or Salesforce.',
+      'Took front-end, backend and agentic features end to end, from scoping to production.',
     ],
-    stack: ['React', 'Node', 'AWS'],
+    stack: ['Go', 'Echo', 'Temporal', 'PostgreSQL', 'MCP', 'Kubernetes'],
   },
   {
-    company: 'TODO — Previous employer',
-    role: 'TODO — Your role',
-    period: '2022 — 2024',
+    company: 'Airbus Defence and Space (Cyber) · Élancourt',
+    role: 'Software Engineer (apprenticeship)',
+    period: 'Sep 2025 — Jan 2026',
     points: [
-      'What you shipped and who used it.',
-      'Something you improved rather than just maintained.',
+      'Refactored Java/JAX-RS modules on the CSOAR product, fixed bugs and wrote JUnit tests to clear SonarQube quality gates.',
     ],
-    stack: ['Vue', 'Python'],
+    stack: ['Java', 'JAX-RS', 'JUnit', 'SonarQube'],
   },
   {
-    company: 'TODO — Education or first role',
-    role: 'TODO — Degree or title',
-    period: '2019 — 2022',
-    points: ['Keep this one short.'],
-    stack: [],
+    company: 'University of Poitiers',
+    role: 'Cybersecurity R&D Intern',
+    period: 'Apr — Jul 2023',
+    points: [
+      'Built a training cyberrange that teaches secure coding to student developers.',
+    ],
+    stack: ['PHP', 'MySQL'],
+  },
+  {
+    company: 'Potech Consulting · Beirut',
+    role: 'Threat Intelligence Intern',
+    period: 'Jun — Aug 2021',
+    points: [
+      'Wrote Python modules for passive reconnaissance and phishing detection, and supported penetration tests on web applications.',
+    ],
+    stack: ['Python', 'OSINT'],
+  },
+]
+
+export const education = [
+  {
+    school: 'École 42, Paris',
+    detail:
+      'Core curriculum completed — selective, project-based, peer-to-peer engineering school; C/C++ systems programming.',
+    period: '2023 — 2025',
+  },
+  {
+    school: 'University of Poitiers',
+    detail: 'BSc in Computer Science.',
+    period: '2020 — 2023',
   },
 ]
 
 export const stack = [
   {
     group: 'Languages',
-    items: ['TypeScript', 'JavaScript', 'Python', 'Go', 'SQL', 'Bash'],
-  },
-  {
-    group: 'Frontend',
-    items: ['React', 'Vite', 'Tailwind', 'WebGL', 'Motion'],
+    items: ['Go', 'TypeScript', 'Python', 'C', 'C++', 'Java', 'SQL'],
   },
   {
     group: 'Backend & data',
-    items: ['Node', 'FastAPI', 'Postgres', 'Redis', 'GraphQL'],
+    items: ['Temporal', 'Echo', 'Node.js', 'FastAPI', 'PostgreSQL', 'Redis'],
   },
   {
-    group: 'Infra',
-    items: ['Nix', 'Docker', 'GitHub Actions', 'Terraform', 'Linux'],
+    group: 'AI agents & LLMs',
+    items: ['MCP servers & gateways', 'Tool design', 'Anthropic API', 'Agent loops', 'Ollama'],
+  },
+  {
+    group: 'Infra & cloud',
+    items: ['Kubernetes', 'Helm', 'Argo CD', 'Docker', 'AWS ECS', 'Nix', 'Prometheus', 'Grafana'],
   },
 ]
 
 // The scrolling strip under the hero.
 export const marquee = [
-  'React', 'TypeScript', 'Nix', 'Postgres', 'WebGL', 'Python',
-  'Docker', 'GitHub Actions', 'Tailwind', 'Go', 'Linux', 'Redis',
+  'Go', 'Temporal', 'MCP', 'Kubernetes', 'PostgreSQL', 'Python',
+  'TypeScript', 'Docker', 'Argo CD', 'React', 'Nix', 'Linux',
 ]
 
 export const sections = [

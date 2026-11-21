@@ -105,7 +105,7 @@ export default function Hero() {
               href={`mailto:${profile.email}`}
               className="rounded-full border border-line px-6 py-3.5 text-sm font-semibold text-bright transition-colors hover:border-accent/50 hover:bg-accent/10"
             >
-              Hire me
+              Email me
             </a>
           </Magnetic>
 

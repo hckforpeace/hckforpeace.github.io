@@ -46,8 +46,8 @@ export default function Nav() {
           href="#top"
           className="group font-display text-sm font-semibold tracking-tight text-bright"
         >
-          <span className="text-gradient">{profile.name}</span>
-          <span className="text-muted">.dev</span>
+          <span className="text-bright">Pierre </span>
+          <span className="text-gradient">Beylouni</span>
         </a>
 
         {/* Desktop pill */}
